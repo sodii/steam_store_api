@@ -60,6 +60,11 @@ impl SteamBuilder {
         self.language = Some(language.clone());
         self
     }
+
+    pub fn with_store_url(mut self, url: &str) -> Self {
+        self.store_url = Url::parse(url).unwrap();
+        self
+    }
 }
 
 /// API client for the Steam store
